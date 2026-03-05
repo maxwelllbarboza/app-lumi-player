@@ -5,7 +5,7 @@ import Conteudos from "@/components/Conteudos";
 import Catalogo from "@/components/Catalogo";
 import Depoimentos from "@/components/Depoimentos";
 import Planos from "@/components/Planos";
-// import Revenda from "@/components/Revenda";
+import Revenda from "@/components/Revenda";
 import FAQ from "@/components/FAQ";
 import CTAFinal from "@/components/CTAFinal";
 import Footer from "@/components/Footer";
