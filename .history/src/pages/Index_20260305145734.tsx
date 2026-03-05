@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ComoFunciona from "@/components/ComoFunciona";
 import Conteudos from "@/components/Conteudos";
-import Catalogo from "@/components/Catalogo";
 import Depoimentos from "@/components/Depoimentos";
 import Planos from "@/components/Planos";
 import Revenda from "@/components/Revenda";
