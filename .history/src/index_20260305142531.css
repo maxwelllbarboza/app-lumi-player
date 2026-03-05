@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 240 15% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 12% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 12% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 265 90% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 80% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 60%;
+
+    --accent: 265 90% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 265 90% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --glow-primary: 265 90% 60%;
+    --glow-secondary: 220 80% 55%;
+    --neon: 180 100% 50%;
+    --gradient-primary: linear-gradient(135deg, hsl(265, 90%, 60%), hsl(220, 80%, 55%));
+    --gradient-hero: linear-gradient(180deg, hsla(265, 90%, 60%, 0.15) 0%, hsla(240, 15%, 5%, 1) 100%);
+    --shadow-glow: 0 0 30px hsla(265, 90%, 60%, 0.4);
+    --shadow-glow-sm: 0 0 15px hsla(265, 90%, 60%, 0.3);
+    --shadow-glow-blue: 0 0 30px hsla(220, 80%, 55%, 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-glow {
+    @apply relative overflow-hidden rounded-lg px-8 py-4 font-bold text-primary-foreground transition-all duration-300;
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-glow-sm);
+  }
+
+  .btn-glow:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  .btn-glow-outline {
+    @apply relative overflow-hidden rounded-lg px-8 py-4 font-bold transition-all duration-300 border-2;
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+  }
+
+  .btn-glow-outline:hover {
+    background: hsla(265, 90%, 60%, 0.1);
+    box-shadow: var(--shadow-glow-sm);
+    transform: translateY(-2px);
+  }
+
+  .card-dark {
+    @apply rounded-xl border border-border p-6 transition-all duration-300;
+    background: hsl(var(--card));
+  }
+
+  .card-dark:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: var(--shadow-glow-sm);
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full transition-all duration-300;
+    background: #25D366;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px hsla(265, 90%, 60%, 0.3); }
+    50% { box-shadow: 0 0 40px hsla(265, 90%, 60%, 0.6); }
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+}
